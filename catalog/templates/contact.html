@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="container">
+
+<h1 style="margin-top: 4rem; padding: 30px; text-align: center;">Contact Me</h1>
+<a href="{% url 'index' %}" button id="button-li" type="button" style="float: right; border-radius: 1rem;" class="btn btn-primary">Back Home</button></a>
+<form method="post" style="margin-top: 3rem; margin-left: 28rem;">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="form-actions">
+      <button style="margin-left: 5rem; border-radius: 1rem;" type="submit">Send</button>
+
+    </div>
+</form> <a href="{% url 'index' %}">
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<br><br><br><br><br>
+<br>
+<br><br>
+<center><h2>Sign up here</h2>
+    <br><br><br>
+<div class="container" style="background-color: burlywood;">
+<form method="post">
+    {% csrf_token %}
+    
+    {{ form.as_table }}
+    
+    <input type="submit" value="Register">
+</form>
+<div class="container">
+<div class="row">
+    <div class="col">
+<p>Already have an account?<a href="{% url 'login' %}">login</a></center></p>
+</div>
+<div class="col">
+<br><br><br><br><br>
+</div>
+{% endblock %}

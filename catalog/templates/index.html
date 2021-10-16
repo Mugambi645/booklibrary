@@ -1,0 +1,91 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<p style="color: white; margin: 3rem;"  class="text-right"><em>Hi, {{user.get_username}}</em></p>
+{% endif %}
+<h1 style="margin-top: 4rem; padding: 40px; text-align: center; color: white;">Mary's Bookshop Management System</h1>
+<br><br><br>
+<div class="container">
+    <div class="row">
+        
+<h3 style="color: white; text-align: centers; display: -moz-grid-line; margin-left: 10rem;"></h3>
+<h2></h2>
+
+
+<div class="container" style="color: white;">
+          <form action="{% url 'search' %}" class="form-inline" method="get" style="margin-left: 15rem;">
+
+            <div class="form-group mb-8">
+     
+                 <h1>{% if type %}{{ type.name }}{% else %}  {% endif %}</h1>
+     
+            </div>
+     
+            <div class="form-group mx-sm-3 mb-2" style="margin-left: 30rem;">
+     
+             <label for="" class="sr-only">search books</label>
+     
+             <input name="search" type="" class="form-control" id="" placeholder="search books...">
+     
+             </div>
+     
+             <button type="submit" class="btn btn-success btn-lg mb-2">Search</button>
+     
+        </form>
+     
+             <br/>
+     
+       
+
+
+  
+    <!--<div class="col-sm-6">
+      <div class="card" style="margin-left: 20rem;">
+        <div class="card-body">
+          <h5 class="card-title" style="text-align: center;">Newsletter!!</h5>
+          <p class="card-text">Suscribe to our Newsletter to get notified on the latest books.Enjoy reading at a whole new level!</p>
+          <center><a href="#" class="btn btn-primary" style="text-align: center;">Subscribe</a></center>
+        </div>
+      </div>-->
+   
+
+
+
+<style>
+    body {
+        background-image: url("https://images.unsplash.com/photo-1535905557558-afc4877a26fc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Ym9va3N8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    #overcard:hover {
+      background-color: brown;
+    }
+</style>
+<div>
+{% load static %}
+<img src=""/>
+</div>  
+
+<center><div class="col" style="margin-left: 15rem; margin-top: 3rem;">
+<div class="text-center">
+<div class="card" style="width: 18rem;">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item"><strong>Librarie's record counts</strong></li>
+<li class="list-group-item"><strong>Books:</strong> {{ num_books }}</li>
+<li class="list-group-item"><strong>Copies:</strong> {{ num_instances }}</li>
+<li class="list-group-item"><strong>Copies available:</strong> {{ num_instances_available }}</li>
+<li class="list-group-item"><strong>Authors:</strong> {{ num_authors }}</li>
+</ul>
+</div>
+</div>
+</div>
+<p style="margin-right: 16rem; margin-top: 2rem;">
+  <div class="alert alert-warning alert-dismissible fade show" role="alert" style="margin-right: 2rem;">
+    You have visited this page {{ num_visits }} time{{ num_visits|pluralize }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
+</div>
+</div>
+{% endblock %}

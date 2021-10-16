@@ -1,0 +1,33 @@
+{% extends "base_generic.html" %}
+{% block content %}
+
+<div class="container" style="margin-top: 15rem; margin-left: 10rem; color: white;">
+
+    <div class="col-md-8 offset-md-2">
+ 
+ {% if query %}
+ 
+            <h2>
+ 
+            {% with results.count as total_results %}
+ 
+            Found {{ total_results }} result{{ total_results|pluralize }}
+ 
+            {% endwith %}
+ 
+            </h2>
+ 
+    {% for c in results %}
+ 
+   <a href="{{c.get_absolute_url}}"><h3>Genre: {{c.genre}}</h3></a>
+ 
+ <h4>Author: {{c.author}}</h4>
+ 
+    {% empty %}
+ 
+    <h3>No results found.</h3>
+ 
+    {% endfor %}
+ 
+   {% endif %}
+{% endblock %} 

@@ -1,0 +1,31 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<br><br><br><br><br><br>
+<center><h1 style="color: white;">Author List</h1></center>
+<br><br><br>
+<button style="text-align: center; margin-left: 28rem; border-radius: 1rem;" class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  Click to see author(s) details</button>
+  <div class="collapse" id="collapseExample">
+      <div class="card card-body" style="width: 20rem; margin-left: 26rem; margin-top: 5rem; border-radius: 2%;">
+  
+{% if author_list %}
+  <ul>
+
+  {% for author in author_list %}
+    <li>
+      <a href="{{ author.get_absolute_url }}">
+      {{ author }} ({{author.date_of_birth}} - {% if author.date_of_death %}{{author.date_of_death}}{% endif %})
+      </a>
+    </li>
+  {% endfor %}
+
+ </ul>
+{% else %}
+  <p>There are no authors available.</p>
+{% endif %}
+        
+        
+        
+{% endblock %}
+
