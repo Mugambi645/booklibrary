@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&
 DEBUG = False
 
 # Set hosts to allow any app on Heroku and the local testing URL
-ALLOWED_HOSTS = ['127.0.0.1', 'booklibke.herokuapp.com']
+ALLOWED_HOSTS = ['booklibke.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
